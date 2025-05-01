@@ -30,10 +30,8 @@
         <li><a href="#start-in-ubuntu">📡 Start in Ubuntu/a></li>
       </ul>
     </li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#license">📄 License</a></li>
+    <li><a href="#contact">👤 Contact</a></li>
   </ol>
 </details>
 
@@ -125,7 +123,14 @@ And use ↓ to start
 ```
 python3 trithes.py
 ```
-After use, the user ↓ to close the virtual environment
-```
-deactivate
-```
+
+---
+
+# 📄 License
+This project is licensed under the [MIT License](./LICENSE) © 2025 Pedro-A.
+
+---
+
+# 👤 Contact
+Discord: pTheDevoted
+Instagram: pedrodevoted
