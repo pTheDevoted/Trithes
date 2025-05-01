@@ -24,7 +24,7 @@
         <li>
       <a href="#installation-and-usage">🛠️ Installation And Usage</a>
       <ul>
-        <li><a href="#start-in-kali-linux-and-termux">📡 Start</a></li>
+        <li><a href="#start">📡 Start</a></li>
       </ul>
     </li>
     <li><a href="#license">📄 License</a></li>
@@ -104,14 +104,7 @@ cd Trithes
 ```
 bash install.sh
 ```
-## 📡 Start in Kali Linux and Termux
-Use the command ↓
-```
-python3 trithes.py
-```
-To start the program whenever you want
-
-## 📡 Start in Ubuntu
+## 📡 Start
 Use the command ↓ to start the python virtual environment
 ```
 source trithes_env/bin/activate
