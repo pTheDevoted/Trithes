@@ -1,11 +1,11 @@
 
 <div align="center">
 
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/trithes.png" alt="Logo" width="300" height="300">
-  </a>
-  <h3 align="center">CLI tool for 
-stegaography.</h3>
+  <p align="center">
+    <img src="Sphere.png" width="200"/>
+    <h1 align="center"><b>Sphere</b></h1>
+</p>
+
 
   <p align="center">
     A practical and effective CLI tool for forensic investigations!
