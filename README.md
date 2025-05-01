@@ -2,7 +2,11 @@
 <div align="center">
 
   <p align="center">
+    <img alt="Static Badge" src="https://img.shields.io/badge/tool-CLI-green">
+    <img alt="Static Badge" src="https://img.shields.io/badge/make_in-python-blue">
     <img src="images/trithes.png" width="300"/>
+    <img alt="Static Badge" src="https://img.shields.io/badge/licence-MIT-red">
+    <img alt="Static Badge" src="https://img.shields.io/badge/version-1.0.0-orange">
     <h1 align="center"><b>Trithes</b></h1>
 </p>
 
