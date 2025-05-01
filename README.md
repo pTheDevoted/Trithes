@@ -24,10 +24,7 @@
         <li>
       <a href="#installation-and-usage">🛠️ Installation And Usage</a>
       <ul>
-        <li><a href="#start-in-kali-linux-and-termux">📡 Start in Kali Linux and Termux</a></li>
-      </ul>
-      <ul>
-        <li><a href="#start-in-ubuntu">📡 Start in Ubuntu/a></li>
+        <li><a href="#start-in-kali-linux-and-termux">📡 Start</a></li>
       </ul>
     </li>
     <li><a href="#license">📄 License</a></li>
@@ -123,7 +120,10 @@ And use ↓ to start
 ```
 python3 trithes.py
 ```
-
+After use, the user ↓ to close the virtual environment
+```
+deactivate
+```
 ---
 
 # 📄 License
