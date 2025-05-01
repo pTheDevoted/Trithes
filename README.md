@@ -94,7 +94,7 @@ Utilizes **piexif** to manually extract and decode EXIF tags from JPEG/JPG files
 
 # 🛠️ Installation And Usage
 > [!NOTE]
-> For the installation to work, you must have git and python installed previously.
+> For the installation to work, you must have git installed previously.
 ```
 git clone https://github.com/pTheDevoted/Trithes
 ```
