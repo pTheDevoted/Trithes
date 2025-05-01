@@ -9,27 +9,15 @@
     <img alt="Static Badge" src="https://img.shields.io/badge/version-1.0.0-orange">
     <h1 align="center"><b>Trithes</b></h1>
 </p>
-
-
-  <p align="center">
-    A practical and effective CLI tool for forensic investigations!
-  </p>
 </div>
 
 <details>
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">📖 About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#technologies-and-libraries-used">📚 Technologies and Libraries Used</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -41,4 +29,58 @@
   </ol>
 </details>
 
-## About The Project
+## 📖 About The Project
+Trithes is a Python command-line tool that uses steganography to hide and extract messages in images. With scan capabilities to detect hidden data and hide to discreetly embed messages, Trithes employs advanced bit manipulation techniques, ensuring high efficiency and image integrity.
+
+This project provides a sleek and functional interface for metadata manipulation in image files (.jpg, .jpeg, .png, .webp).  
+It allows you to:
+
+- Embed hidden messages within image metadata.
+- Perform full metadata scans.
+- Safely wipe hidden or sensitive information.
+- Maintain a refined and intuitive user experience via the command line.
+
+The application integrates robust image-processing technologies and professional-grade forensic tools.
+
+---
+
+## 📚 Technologies and Libraries Used
+
+| Technology | Description |
+|:-----------|:------------|
+| **Python (>=3.8)** | Primary development language. |
+| **Pillow (PIL)** | Image processing and metadata editing for PNG/WEBP. |
+| **piexif** | Insertion and editing of EXIF metadata for JPEG/JPG. |
+| **ExifTool** | Industry-standard CLI tool for metadata handling. |
+| **subprocess** | Execution and management of external processes. |
+| **os** | File system operations and validations. |
+| **pystyle** | Advanced CLI output styling. |
+
+---
+
+## 🛠 Core Features
+
+### 1. Message Embedding
+Hides a user-defined string into the image metadata:
+- PNG/WEBP: Uses custom fields (Hidden Message) via **Pillow**.
+- JPEG/JPG: Inserts into the Software EXIF tag via **piexif**.
+
+### 2. Metadata Scanning
+Performs a comprehensive scan of embedded metadata using:
+- **ExifTool** as the scanning engine, ensuring maximum compatibility and precision.
+
+### 3. Metadata Cleaning
+Securely removes all embedded metadata by:
+- Executing `exiftool -all=`, ensuring complete metadata wipe.
+
+### 4. Manual EXIF Decoding
+Utilizes **piexif** to manually extract and decode EXIF tags from JPEG/JPG files.
+
+### 5. Error Handling and Resilience
+- Rigorous validation of formats and paths.
+- Robust exception management for expected and unexpected errors.
+- Integrity-preserving operations to prevent file corruption.
+
+### 6. User Interface Experience
+- Automatic color styling for friendly, informative feedback.
+- Consistent and polished messaging for a professional terminal experience.
