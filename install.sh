@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 b="\033[0m"
 v1="${b}\033[32m"
 r1="${b}\033[31m"
@@ -33,15 +32,29 @@ else
 fi
 
 if [ "$DISTRO" == "Termux" ]; then
-    pkg update -y && pkg install -y libjpeg-turbo pcre libpng zlib python
+    pkg update -y && pkg install -y libjpeg-turbo pcre libpng zlib python python-pip python-virtualenv
 elif [ "$DISTRO" == "Kali" ] || [ "$DISTRO" == "Ubuntu" ]; then
     sudo apt update -y && sudo apt install -y \
         libjpeg-dev libpng-dev zlib1g-dev \
-        python3-pip libimage-exiftool-perl
+        python3-pip python3-venv libimage-exiftool-perl
 fi
 
+echo -e "${b}[${v1}+${b}] Creating Python virtual environment..."
 
-pip3 install pillow pystyle piexif InquirerPy rich
+if [ "$DISTRO" == "Termux" ]; then
+    python -m venv trithes_env
+    source trithes_env/bin/activate
+else
+    python3 -m venv trithes_env
+    source trithes_env/bin/activate
+fi
+
+echo -e "${b}[${v1}+${b}] Virtual environment activated."
+
+
+echo -e "${b}[${v1}+${b}] Installing required Python libraries..."
+pip install --upgrade pip
+pip install pillow pystyle piexif InquirerPy rich
 
 if ! command -v exiftool &> /dev/null; then
     echo -e "${b}[${r1}!${b}] exiftool not found! Please check the installation."
@@ -50,5 +63,6 @@ else
     echo -e "${b}[${v1}+${b}] exiftool successfully installed!"
 fi
 
+# Run program
 echo -e "${b}[${v1}+${b}] Launching Trithes...\n"
 python3 trithes.py
