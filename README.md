@@ -2,18 +2,13 @@
 <div align="center">
 
   <p align="center">
-    <img src="Sphere.png" width="200"/>
-    <h1 align="center"><b>Sphere</b></h1>
+    <img src="images/trithes.png" width="300"/>
+    <h1 align="center"><b>Trithes</b></h1>
 </p>
 
 
   <p align="center">
     A practical and effective CLI tool for forensic investigations!
-    <br />
-    <a href="https://github.com/pTheDevoted/Trithes"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
   </p>
 </div>
 
