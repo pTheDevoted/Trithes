@@ -17,11 +17,11 @@
     <li>
       <a href="#about-the-project">📖 About The Project</a>
       <ul>
-        <li><a href="#technologies-and-libraries-used">📚 Technologies and Libraries Used</a></li>
+        <li><a href="#technologies-and-libraries-used">📚 Technologies And Libraries Used</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#core-features">🛠 Core Features</a></li>
+    <li><a href="#installation-and-usage">🛠️ Installation And Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -29,7 +29,9 @@
   </ol>
 </details>
 
-## 📖 About The Project
+---
+
+# 📖 About The Project
 Trithes is a Python command-line tool that uses steganography to hide and extract messages in images. With scan capabilities to detect hidden data and hide to discreetly embed messages, Trithes employs advanced bit manipulation techniques, ensuring high efficiency and image integrity.
 
 This project provides a sleek and functional interface for metadata manipulation in image files (.jpg, .jpeg, .png, .webp).  
@@ -42,7 +44,7 @@ It allows you to:
 
 The application integrates robust image-processing technologies and professional-grade forensic tools.
 
----
+
 
 ## 📚 Technologies and Libraries Used
 
@@ -58,7 +60,7 @@ The application integrates robust image-processing technologies and professional
 
 ---
 
-## 🛠 Core Features
+# 🛠 Core Features
 
 ### 1. Message Embedding
 Hides a user-defined string into the image metadata:
@@ -84,3 +86,38 @@ Utilizes **piexif** to manually extract and decode EXIF tags from JPEG/JPG files
 ### 6. User Interface Experience
 - Automatic color styling for friendly, informative feedback.
 - Consistent and polished messaging for a professional terminal experience.
+
+---
+
+# 🛠️ Installation And Usage
+> [!NOTE]
+> For the installation to work, you must have git and python installed previously.
+```
+git clone https://github.com/pTheDevoted/Trithes
+```
+```
+cd Trithes
+```
+```
+bash install.sh
+```
+## 💉 Start in Kali and Termux
+Use the command ↓
+```
+python3 trithes.py
+```
+To start the program whenever you want
+
+## 💉 Start in Ubuntu
+Use the command ↓ to start the python virtual environment
+```
+source trithes_env/bin/activate
+```
+And use ↓ to start
+```
+python3 trithes.py
+```
+After use, the user ↓ to close the virtual environment
+```
+deactivate
+```
