@@ -34,7 +34,7 @@ fi
 
 # Instalação das dependências.
 if [ "$DISTRO" == "Termux" ]; then
-    pkg update -y && pkg install -y libjpeg-turbo pcre libpng zlib python exiftool
+    pkg update -y && pkg install -y libjpeg-turbo pcre libpng zlib python3 exiftool
 else
     sudo apt update -y && sudo apt install -y \
         libjpeg-dev libpng-dev zlib1g-dev python3-pip python3-venv libimage-exiftool-perl
