@@ -133,4 +133,5 @@ This project is licensed under the [MIT License](./LICENSE) © 2025 Pedro-A.
 
 # 👤 Contact
 Discord: pTheDevoted
+
 Instagram: pedrodevoted
