@@ -17,11 +17,19 @@
     <li>
       <a href="#about-the-project">📖 About The Project</a>
       <ul>
-        <li><a href="#technologies-and-libraries-used">📚 Technologies And Libraries Used</a></li>
+        <li><a href="#technologies-and-libraries-used">📚 Technologies and Libraries Used</a></li>
       </ul>
     </li>
     <li><a href="#core-features">🛠 Core Features</a></li>
-    <li><a href="#installation-and-usage">🛠️ Installation And Usage</a></li>
+        <li>
+      <a href="#installation-and-usage">🛠️ Installation And Usage</a>
+      <ul>
+        <li><a href="#start-in-kali-linux-and-termux">📡 Start in Kali Linux and Termux</a></li>
+      </ul>
+      <ul>
+        <li><a href="#start-in-ubuntu">📡 Start in Ubuntu/a></li>
+      </ul>
+    </li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -101,14 +109,14 @@ cd Trithes
 ```
 bash install.sh
 ```
-## 💉 Start in Kali and Termux
+## 📡 Start in Kali Linux and Termux
 Use the command ↓
 ```
 python3 trithes.py
 ```
 To start the program whenever you want
 
-## 💉 Start in Ubuntu
+## 📡 Start in Ubuntu
 Use the command ↓ to start the python virtual environment
 ```
 source trithes_env/bin/activate
