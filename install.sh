@@ -32,7 +32,7 @@ else
 fi
 
 if [ "$DISTRO" == "Termux" ]; then
-    pkg update -y && pkg install -y libjpeg-turbo pcre libpng zlib python python-pip python-virtualenv
+    pkg update -y && pkg install -y libjpeg-turbo pcre libpng zlib python python-pip virtualenv exiftool
 elif [ "$DISTRO" == "Kali" ] || [ "$DISTRO" == "Ubuntu" ]; then
     sudo apt update -y && sudo apt install -y \
         libjpeg-dev libpng-dev zlib1g-dev \
