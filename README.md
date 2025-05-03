@@ -1,4 +1,4 @@
-div align="center">
+<div align="center">
   <p align="center">
     <img alt="Static Badge" src="https://img.shields.io/badge/tool-CLI-green">
     <img alt="Static Badge" src="https://img.shields.io/badge/make_in-python-blue">
