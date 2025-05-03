@@ -104,15 +104,15 @@ cd Trithes
 bash install.sh
 ```
 ## 📡 Start
-Use the command â†“ to start the python virtual environment
+Use the command ↓ to start the python virtual environment
 ```
 source trithes_env/bin/activate
 ```
-And use â†“ to start
+And use ↓ to start
 ```
 python3 trithes.py
 ```
-After use, the user â†“ to close the virtual environment
+After use, the user ↓ to close the virtual environment
 ```
 deactivate
 ```
