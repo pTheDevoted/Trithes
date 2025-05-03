@@ -119,7 +119,7 @@ deactivate
 ---
 
 # 📄 License
-This project is licensed under the [MIT License](./LICENSE) Â© 2025 Pedro-A.
+This project is licensed under the [MIT License](./LICENSE) © 2025 Pedro-A.
 
 ---
 
