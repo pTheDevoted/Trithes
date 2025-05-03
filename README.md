@@ -15,26 +15,27 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">📖 About The Project</a>
+      <a href="#about-the-project">ðŸ“– About The Project</a>
       <ul>
-        <li><a href="#technologies-and-libraries-used">📚 Technologies and Libraries Used</a></li>
+        <li><a href="#technologies-and-libraries-used">ðŸ“š Technologies and Libraries Used</a></li>
       </ul>
     </li>
-    <li><a href="#core-features">🛠 Core Features</a></li>
-        <li>
-      <a href="#installation-and-usage">🛠️ Installation And Usage</a>
+    <li><a href="#core-features">ðŸ›  Core Features</a></li>
+    <li>
+      <a href="#installation-and-usage">ðŸ› ï¸ Installation And Usage</a>
       <ul>
-        <li><a href="#start">📡 Start</a></li>
+        <li><a href="#start">ðŸ“¡ Start</a></li>
       </ul>
     </li>
-    <li><a href="#license">📄 License</a></li>
-    <li><a href="#contact">👤 Contact</a></li>
+    <li><a href="#tested-environments">ðŸ§ª Tested Environments</a></li>
+    <li><a href="#license">ðŸ“„ License</a></li>
+    <li><a href="#contact">ðŸ‘¤ Contact</a></li>
   </ol>
 </details>
 
 ---
 
-# 📖 About The Project
+# ðŸ“– About The Project
 Trithes is a Python command-line tool that uses steganography to hide and extract messages in images. With scan capabilities to detect hidden data and hide to discreetly embed messages, Trithes employs advanced bit manipulation techniques, ensuring high efficiency and image integrity.
 
 This project provides a sleek and functional interface for metadata manipulation in image files (.jpg, .jpeg, .png, .webp).  
@@ -47,9 +48,7 @@ It allows you to:
 
 The application integrates robust image-processing technologies and professional-grade forensic tools.
 
-
-
-## 📚 Technologies and Libraries Used
+## ðŸ“š Technologies and Libraries Used
 
 | Technology | Description |
 |:-----------|:------------|
@@ -63,7 +62,7 @@ The application integrates robust image-processing technologies and professional
 
 ---
 
-# 🛠 Core Features
+# ðŸ›  Core Features
 
 ### 1. Message Embedding
 Hides a user-defined string into the image metadata:
@@ -92,7 +91,7 @@ Utilizes **piexif** to manually extract and decode EXIF tags from JPEG/JPG files
 
 ---
 
-# 🛠️ Installation And Usage
+# ðŸ› ï¸ Installation And Usage
 > [!NOTE]
 > For the installation to work, you must have git installed previously.
 ```
@@ -104,27 +103,42 @@ cd Trithes
 ```
 bash install.sh
 ```
-## 📡 Start
-Use the command ↓ to start the python virtual environment
+## ðŸ“¡ Start
+Use the command â†“ to start the python virtual environment
 ```
 source trithes_env/bin/activate
 ```
-And use ↓ to start
+And use â†“ to start
 ```
 python3 trithes.py
 ```
-After use, the user ↓ to close the virtual environment
+After use, the user â†“ to close the virtual environment
 ```
 deactivate
 ```
----
-
-# 📄 License
-This project is licensed under the [MIT License](./LICENSE) © 2025 Pedro-A.
 
 ---
 
-# 👤 Contact
-Discord: thedevoted
+## ðŸ§ª Tested Environments
 
+Version **1.0.0** of Trithes has been tested in the following environments:
+
+| Environment | Status |
+|:------------|:--------|
+| **Ubuntu** | Fully functional. Installation and usage are stable without any known issues. |
+| **Termux** | Installation is unstable and may require manual intervention, but the tool has potential to run. |
+| **Kali Linux** | Partial compatibility. Installation process is currently unstable, yet execution is possible with adjustments. |
+
+> [!NOTE]
+> While Ubuntu provides the most seamless experience, users on Termux or Kali may need to troubleshoot during setup. Contributions and fixes are welcome!
+
+---
+
+# ðŸ“„ License
+This project is licensed under the [MIT License](./LICENSE) Â© 2025 Pedro-A.
+
+---
+
+# ðŸ‘¤ Contact
+Discord: thedevoted  
 Instagram: pedrodevoted
