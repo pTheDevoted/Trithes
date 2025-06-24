@@ -77,6 +77,10 @@ Hide custom messages into:
 - Friendly error feedback
 - Non-destructive file handling
 
+### 6. 💻 Professional UX
+- Command line interface with consistent messaging
+- A professional terminal experience
+  
 ---
 
 # 💻 Compatibility
@@ -140,4 +144,5 @@ This project is licensed under the MIT License © 2025 Pedro-A.
 # 👤 Contact
 
 Discord: thedevoted
+
 Instagram: @pedrodevoted
