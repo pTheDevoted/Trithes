@@ -106,6 +106,7 @@ cd Trithes
 ```
 bash install.sh
 ```
+(After installation, it automatically starts in menu mode)
 ## 📡 Start in menu mode (recommended for beginners)
 Use the command ↓ to start the python virtual environment
 ```
