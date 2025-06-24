@@ -34,6 +34,8 @@ This tool supports both **interactive mode (menu)** and **advanced terminal mode
 - Full metadata wipe functionality.
 - Fast and accessible forensic-style usage for both analysts and curious users.
 
+Visite the site https://pthedevoted.github.io/trithes-website/
+
 ---
 
 ## 📚 Technologies and Libraries Used
