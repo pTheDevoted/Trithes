@@ -50,6 +50,7 @@ This tool supports both **interactive mode (menu)** and **advanced terminal mode
 | **rich** | CLI styling and formatting |
 | **pystyle** | Terminal gradient effects |
 | **InquirerPy** | Menu-style prompts |
+| **PyPDF2** | Handle EXIF data in PDF |
 
 ---
 
@@ -59,7 +60,7 @@ This tool supports both **interactive mode (menu)** and **advanced terminal mode
 Hide custom messages into:
 - PNG/WEBP: `Pillow` custom fields
 - JPG/JPEG: `Software` EXIF tag via `piexif`
-- PDF: Insertion using ExifTool
+- PDF: Insertion using `PyPDF2`
 
 ### 2. 🔍 Metadata Scanning
 - Scan metadata from over **130+ file formats**
