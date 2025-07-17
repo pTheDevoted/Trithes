@@ -1,22 +1,24 @@
 import os
 import subprocess
+import shutil
 from PIL import Image, PngImagePlugin
 import piexif
 import display
 from PyPDF2 import PdfReader, PdfWriter
 
-
 def run_exiftool(args):
-    try:
-        result = subprocess.run(['/usr/bin/exiftool'] + args, capture_output=True, text=True)
-        return result.stdout.strip()
-    except FileNotFoundError:
-        print(f"{display.red}[!] ExifTool not found.")
+    exiftool_path = shutil.which("exiftool")
+    if not exiftool_path:
+        print(f"{display.red}[!] ExifTool not found in PATH.")
+        print(f"{display.yellow}    Please install it using: apt install exiftool, brew install exiftool, or cpan Image::ExifTool")
         return None
+
+    try:
+        result = subprocess.run([exiftool_path] + args, capture_output=True, text=True)
+        return result.stdout.strip()
     except Exception as e:
         print(f"{display.red}[!] Error running exiftool: {e}")
         return None
-
 
 def hide_message(file_path, message):
     try:
@@ -53,20 +55,16 @@ def hide_message(file_path, message):
 
         else:
             print(f"\n{display.red}[!] Unsupported file format for hiding messages.")
-            input(f"\n{display.white}Press {display.bwhite}[ENTER]{display.white} to continue")
             return False
 
         return True
     except Exception as e:
         print(f"\n{display.red}[!] Error while hiding message: {e}")
-        input(f"\n{display.white}Press {display.bwhite}[ENTER]{display.white} to continue")
         return False
-
 
 def scan_image_metadata(file_path):
     if not os.path.isfile(file_path):
-        print(f"\n{display.red}[!] The provided path is not a valid file.")
-        input(f"\n{display.white}Press {display.bwhite}[ENTER]{display.white} to continue")
+        print(f"\n{display.red}[!] Invalid file path provided.")
         return
 
     print(f"Scanning metadata for {file_path}...")
@@ -78,9 +76,32 @@ def scan_image_metadata(file_path):
         filtered = "\n".join(line for line in lines if "ExifTool Version Number" not in line)
         print(f"\n{display.yellow}Metadata found:\n{display.white}{filtered}")
     else:
-        print(f"{display.red}[!] Could not scan metadata or file not supported.")
+        print(f"{display.red}[!] Unable to scan metadata or unsupported file.")
 
-    input(f"\n{display.white}Press {display.bwhite}[ENTER]{display.white} to continue")
+def remove_metadata(file_path):
+    try:
+        if file_path.endswith((".jpg", ".jpeg")):
+            piexif.remove(file_path)
+            print(f"\n{display.green}[+] Metadata removed from {file_path}")
 
+        elif file_path.endswith(".png"):
+            img = Image.open(file_path)
+            img.save(file_path)
+            print(f"\n{display.green}[+] Metadata removed from {file_path}")
 
-VERSION = "2.0.0"
+        elif file_path.endswith(".pdf"):
+            reader = PdfReader(file_path)
+            writer = PdfWriter()
+            for page in reader.pages:
+                writer.add_page(page)
+            writer.add_metadata({})
+            with open(file_path, "wb") as f:
+                writer.write(f)
+                print(f"\n{display.green}[+] Metadata removed from {file_path}")
+
+        else:
+            print(f"\n{display.red}[!] Unsupported file format for metadata removal.")
+    except Exception as e:
+        print(f"\n{display.red}[!] Error removing metadata: {e}")
+
+VERSION = "2.5.3"
