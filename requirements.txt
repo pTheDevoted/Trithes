@@ -1,0 +1,5 @@
+Pillow
+piexif
+PyPDF2
+InquirerPy
+pystyle
