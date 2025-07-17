@@ -4,7 +4,7 @@
     <img alt="Static Badge" src="https://img.shields.io/badge/made_in-python-blue">
     <img src="images/trithes.png" width="300"/>
     <img alt="Static Badge" src="https://img.shields.io/badge/licence-MIT-red">
-    <img alt="Static Badge" src="https://img.shields.io/badge/version-2.0.0-orange">
+    <img alt="Static Badge" src="https://img.shields.io/badge/version-2.5.2-orange">
     <h1 align="center"><b>Trithes</b></h1>
 </p>
 </div>
@@ -24,17 +24,20 @@
 ---
 
 # 📖 About The Project
+Trithes is a Python-based CLI tool for steganography and metadata analysis, allowing users to scan metadata from over 130 file formats, as well as insert and remove steganography in four formats.
 
-Trithes is a Python-based CLI tool for **steganography and metadata analysis**, allowing users to embed, inspect, or wipe metadata from over **130 file formats**.
+This tool supports both interactive menu mode and command-line argument mode.
+It enables:
 
-This tool supports both **interactive mode (menu)** and **advanced terminal mode** with arguments. It allows:
+- Embedding hidden messages into PNG, JPG, WEBP, and PDF files.
 
-- Embedding secret messages in PNG, JPG, WEBP, and even PDF.
-- Scanning metadata from virtually any format supported by ExifTool.
-- Full metadata wipe functionality.
-- Fast and accessible forensic-style usage for both analysts and curious users.
+- Scanning metadata using ExifTool across a wide range of formats.
 
-Visite the site https://pthedevoted.github.io/trithes-website/
+- Removing metadata in a clean and effective way.
+
+- A portable forensic-style experience built for analysts, students, or hobbyists.
+
+Visit the official site: https://pthedevoted.github.io/trithes-website
 
 ---
 
@@ -48,6 +51,7 @@ Visite the site https://pthedevoted.github.io/trithes-website/
 | **piexif** | Handle EXIF data in JPEG/JPG |
 | **argparse** | Parse command-line arguments |
 | **subprocess** | Execute system commands |
+| **shutil** | Terminal size and path detection |
 | **os** | Filesystem operations |
 | **rich** | CLI styling and formatting |
 | **pystyle** | Terminal gradient effects |
@@ -69,11 +73,12 @@ Hide custom messages into:
 - Based on `exiftool`, with automatic filtering and formatting
 
 ### 3. 🧹 Metadata Wipe
-- Uses `exiftool -all=` to clean all metadata from any file
+- Removes metadata from supported formats (JPG, PNG, WEBP, PDF)
+- Uses clean rewrite techniques or library-specific removals
 
 ### 4. ⚙️ Dual Interface (Menu + CLI)
 - **Menu mode** for beginners
-- **Argument mode** for advanced users and scripting
+- **Argument mode** for advanced use cases, automation, scripting
 
 ### 5. 📋 Error Resilience
 - Detects invalid formats
@@ -91,8 +96,8 @@ Hide custom messages into:
 | Platform | Status |
 |----------|--------|
 | **Ubuntu** | ✅ Fully stable |
-| **Kali Linux** | ⚠️ Stable, but ExifTool must be preinstalled |
-| **Termux** | ⚠️ Limited, may require manual setup of dependencies |
+| **macOS** | ✅ Fully stable |
+| **Termux** | ⚠️ Partial support: some dependencies may require manual setup |
 
 ---
 
