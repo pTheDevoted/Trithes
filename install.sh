@@ -1,70 +1,94 @@
 #!/bin/bash
 
-b="\033[0m"
-v1="${b}\033[32m"
-r1="${b}\033[31m"
+set -e
 
-clear
-echo -e "${r1}\nDetecting environment...\n"
+YELLOW='\033[1;33m'
+GREEN='\033[1;32m'
+RED='\033[1;31m'
+NC='\033[0m' # Sem cor
 
-# Verifica SO
-OS=$(uname -o)
-DISTRO=""
+VENV_DIR="trithes_env"
 
-if [ "$OS" == "Android" ]; then
-    echo -e "${b}[${v1}+${b}] Termux environment detected.\n"
-    DISTRO="Termux"
-elif [ -f /etc/os-release ]; then
-    . /etc/os-release
-    if [[ "$ID" == "kali" ]]; then
-        echo -e "${b}[${v1}+${b}] Kali Linux environment detected.\n"
-        DISTRO="Kali"
-    elif [[ "$ID" == "ubuntu" ]]; then
-        echo -e "${b}[${v1}+${b}] Ubuntu environment detected.\n"
-        DISTRO="Ubuntu"
-    else
-        echo -e "${b}[${r1}!${b}] Unknown Linux distribution: $ID. Exiting..."
+echo -e "${YELLOW}[*] Detecting operating system...${NC}"
+
+OS="$(uname -s)"
+case "$OS" in
+    Linux)
+        if [ -n "$ANDROID_ROOT" ]; then
+            PLATFORM="termux"
+            echo -e "${GREEN}[+] Platform detected: Termux (Android)${NC}"
+        else
+            PLATFORM="linux"
+            echo -e "${GREEN}[+] Platform detected: Debian-based Linux (apt)${NC}"
+        fi
+        ;;
+    Darwin)
+        PLATFORM="macos"
+        echo -e "${GREEN}[+] Platform detected: macOS${NC}"
+        ;;
+    *)
+        echo -e "${RED}[!] Unsupported system: $OS${NC}"
         exit 1
-    fi
+        ;;
+esac
+
+echo -e "${YELLOW}[*] Checking for Python and pip...${NC}"
+
+if command -v python3 &> /dev/null; then
+    PYTHON=python3
 else
-    echo -e "${b}[${r1}!${b}] Unknown environment. Exiting..."
+    echo -e "${RED}[!] Python 3 not found. Please install it manually.${NC}"
     exit 1
 fi
 
-# Instala dependências do sistema
-if [ "$DISTRO" == "Termux" ]; then
-    pkg update -y && pkg install -y libjpeg-turbo pcre libpng zlib python python-pip virtualenv exiftool
-elif [ "$DISTRO" == "Kali" ] || [ "$DISTRO" == "Ubuntu" ]; then
-    sudo apt update -y && sudo apt install -y \
-        libjpeg-dev libpng-dev zlib1g-dev \
-        python3-pip python3-venv libimage-exiftool-perl
+if ! command -v pip3 &> /dev/null; then
+    echo -e "${YELLOW}[*] pip3 not found. Installing...${NC}"
+    case "$PLATFORM" in
+        linux)
+            sudo apt update && sudo apt install -y python3-pip
+            ;;
+        macos)
+            brew install python
+            ;;
+        termux)
+            pkg update && pkg install -y python
+            ;;
+    esac
 fi
 
-echo -e "${b}[${v1}+${b}] Creating Python virtual environment..."
+echo -e "${YELLOW}[*] Creating virtual environment...${NC}"
+$PYTHON -m venv "$VENV_DIR"
+source "$VENV_DIR/bin/activate"
 
-if [ "$DISTRO" == "Termux" ]; then
-    python -m venv trithes_env
-    source trithes_env/bin/activate
-else
-    python3 -m venv trithes_env
-    source trithes_env/bin/activate
+if [ ! -f "$VENV_DIR/bin/activate" ]; then
+    echo -e "${RED}[!] Failed to create virtual environment.${NC}"
+    exit 1
 fi
 
-echo -e "${b}[${v1}+${b}] Virtual environment activated."
-
-# Instala dependências Pythonnn
-echo -e "${b}[${v1}+${b}] Installing required Python libraries..."
+echo -e "${YELLOW}[*] Installing Python dependencies...${NC}"
 pip install --upgrade pip
-pip install pillow pystyle piexif InquirerPy rich PyPDF2
+pip install -r requirements.txt
 
-# Verifica instalação do ExifTool
+echo -e "${YELLOW}[*] Checking for ExifTool (system-wide)...${NC}"
+
 if ! command -v exiftool &> /dev/null; then
-    echo -e "${b}[${r1}!${b}] exiftool not found! Please check the installation."
-    exit 1
+    echo -e "${YELLOW}[!] ExifTool not found. Installing...${NC}"
+    case "$PLATFORM" in
+        linux)
+            sudo apt install -y libimage-exiftool-perl
+            ;;
+        macos)
+            brew install exiftool
+            ;;
+        termux)
+            echo -e "${RED}[!] ExifTool is not available by default in Termux.${NC}"
+            echo -e "${RED}    You can try installing with:${NC} cpan Image::ExifTool"
+            echo -e "${RED}    Or compile it manually from source.${NC}"
+            ;;
+    esac
 else
-    echo -e "${b}[${v1}+${b}] exiftool successfully installed!"
+    echo -e "${GREEN}[✓] ExifTool is already installed.${NC}"
 fi
 
-# Executa o programa
-echo -e "${b}[${v1}+${b}] Launching Trithes...\n"
-python3 trithes.py
+echo -e "${GREEN}[✓] Setup completed successfully!${NC}"
+echo -e "${YELLOW}[i] To activate the environment, run: source $VENV_DIR/bin/activate${NC}"
