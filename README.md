@@ -4,7 +4,7 @@
     <img alt="Static Badge" src="https://img.shields.io/badge/made_in-python-blue">
     <img src="images/trithes.png" width="300"/>
     <img alt="Static Badge" src="https://img.shields.io/badge/licence-MIT-red">
-    <img alt="Static Badge" src="https://img.shields.io/badge/version-2.5.2-orange">
+    <img alt="Static Badge" src="https://img.shields.io/badge/version-2.5.3-orange">
     <h1 align="center"><b>Trithes</b></h1>
 </p>
 </div>
