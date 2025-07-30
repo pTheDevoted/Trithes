@@ -37,7 +37,6 @@ It enables:
 
 - A portable forensic-style experience built for analysts, students, or hobbyists.
 
-Visit the official site: https://pthedevoted.github.io/trithes-website
 
 ---
 
